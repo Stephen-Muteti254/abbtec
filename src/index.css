@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Construction Firm Theme: Orange + Dark */
+    --background: 0 0% 100%;
+    --foreground: 220 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 15%;
+
+    --primary: 21 100% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 94%;
+    --secondary-foreground: 220 10% 15%;
+
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 8% 45%;
+
+    --accent: 230 20% 18%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 21 100% 54%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 230 20% 14%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 21 100% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 22%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 230 20% 22%;
+    --sidebar-ring: 21 100% 54%;
+
+    /* Custom tokens */
+    --hero-overlay: 230 20% 14%;
+    --section-alt: 220 10% 96%;
+  }
+
+  .dark {
+    --background: 230 20% 10%;
+    --foreground: 0 0% 92%;
+    --card: 230 20% 14%;
+    --card-foreground: 0 0% 92%;
+    --popover: 230 20% 14%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 21 100% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 20% 18%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 230 20% 22%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 21 100% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 20% 22%;
+    --input: 230 20% 22%;
+    --ring: 21 100% 54%;
+    --sidebar-background: 230 20% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 21 100% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 18%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 230 20% 18%;
+    --sidebar-ring: 21 100% 54%;
+    --hero-overlay: 230 20% 8%;
+    --section-alt: 230 20% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Josefin Sans', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  /* Thin scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--accent) / 0.08));
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      to right,
+      hsl(var(--hero-overlay) / 0.85),
+      hsl(var(--hero-overlay) / 0.5)
+    );
+  }
+}
